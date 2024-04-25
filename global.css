@@ -1,0 +1,11 @@
+body {
+    background-color: burlywood;
+    color: black;
+    font-family: Consolas;
+    font-size: 36px;
+}
+
+div .header {
+    position: absolute;
+    width: 100vw;
+}
