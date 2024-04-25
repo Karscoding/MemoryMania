@@ -22,5 +22,12 @@ p {
 }
 
 .information {
+}
+
+
+
+.grid-container {
+    display: inline-grid;
+    grid: auto-flow / 1fr 1fr 1fr;
 
 }
