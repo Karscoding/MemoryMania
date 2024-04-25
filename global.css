@@ -22,12 +22,21 @@ p {
 }
 
 .information {
+
 }
-
-
 
 .grid-container {
     display: inline-grid;
     grid: auto-flow / 1fr 1fr 1fr;
+    left: auto;
+}
+
+.grid-item {
+    padding: 100px;
+    text-align: center;
+}
+
+.board{
+    text-align: center;
 
 }
