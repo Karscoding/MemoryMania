@@ -5,7 +5,22 @@ body {
     font-size: 36px;
 }
 
-div .header {
-    position: absolute;
-    width: 100vw;
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.header {
+    font-size: 64px;
+    text-align: center;
+    margin: 0;
+    padding: 45px;
+    width: 100%;
+}
+
+.information {
+
 }
