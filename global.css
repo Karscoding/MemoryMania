@@ -13,16 +13,25 @@ p {
     margin: 0;
 }
 
-.header {
+#header {
     font-size: 64px;
     text-align: center;
     margin: 0;
-    padding: 45px;
     width: 100%;
 }
 
-.information {
+#game-state {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
 
+#information {
+    margin:75px;
+}
+
+#board{
+    text-align: center;
 }
 
 .grid-container {
@@ -32,11 +41,22 @@ p {
 }
 
 .grid-item {
+    margin: 10px;
     padding: 100px;
+    background-color: lightgreen;
     text-align: center;
 }
 
-.board{
-    text-align: center;
+#start-button {
+    font-size: 64px;
+    width: 30vw;
+    height: 7vh;
 
+}
+
+select {
+    font-size: 40px;
+    width: 200px;
+    height: 75px;
+    margin: 25px;
 }
