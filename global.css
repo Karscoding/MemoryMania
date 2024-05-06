@@ -31,7 +31,9 @@ p {
 }
 
 #board {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: left;
 }
 
 .grid-container {
@@ -51,7 +53,6 @@ p {
     font-size: 64px;
     width: 30vw;
     height: 7vh;
-
 }
 
 select {
@@ -81,10 +82,13 @@ select {
 
 .color-button-container {
     display: flex;
-    padding-bottom: 10px;
+    align-items: flex-start;
+    margin: 10px;
     flex-direction: column;
 }
 
 #color-selection {
-    text-align: right;
+    display: flex;
+    justify-content: left;
+    margin: 75px;
 }
