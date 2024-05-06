@@ -6,59 +6,63 @@
     <title>Memory</title>
 </head>
 <body>
-    <div id="header">
-        <h1>
-            MemoryMania
-        </h1>
-        <div id="game-state">
-            <p>Verlopen tijd: xx seconden.</p>
-            <p>Gevonden kaart paren: x</p>
-            <br> <!--Hier moet resterende tijd progress bar-->
+<div id="header">
+    <h1>
+        MemoryMania
+    </h1>
+    <div id="game-state">
+        <p>Verlopen tijd: xx seconden.</p>
+        <p>Gevonden kaart paren: x</p>
+        <br> <!--Hier moet resterende tijd progress bar-->
+    </div>
+</div>
+<div id="board">
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+</div>
+<div id="information">
+    <div id="leaderboard">
+        <h2>Top Vijf</h2>
+        <ul>
+            <li>1. Barack Obama</li>
+            <li>2. Joe Biden</li>
+            <li>3. Super Mario</li>
+            <li>4. Bowser</li>
+            <li>5. Princess Peach</li>
+        </ul>
+    </div>
+    <p>Gemiddelde speeltijd: x:xx</p>
+    <div id="settings">
+        <select name="kaart-character" id="character-dropdown">
+            <option value="*">*</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select>
+        <select name="kaart-aantal" id="aantal-dropdown">
+            <option value="3x3">3x3</option>
+            <option value="4x4">4x4</option>
+            <option value="5x5">5x5</option>
+            <option value="6x6">6x6</option>
+            <option value="7x7">7x7</option>
+        </select>
+    </div>
+    <div id="color-selection">
+        <div class="color-button-container">
+            <button class="color-button" id="closed-card-button">Verborgen kaarten</button>
+            <button class="color-button" id="opened-card-button">Geopende kaarten</button>
+            <button class="color-button" id="found-card-button"> Gevonden kaarten</button>
         </div>
     </div>
-    <div id="board">
-        <div class="grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-            <div class="grid-item">6</div>
-            <div class="grid-item">7</div>
-            <div class="grid-item">8</div>
-            <div class="grid-item">9</div>
-        </div>
-    </div>
-    <div id="information">
-        <div id="leaderboard">
-            <h2>Top Vijf</h2>
-            <ul>
-                <li>1. Barack Obama</li>
-                <li>2. Joe Biden</li>
-                <li>3. Super Mario</li>
-                <li>4. Bowser</li>
-                <li>5. Princess Peach</li>
-            </ul>
-        </div>
-        <p>Gemiddelde speeltijd: x:xx</p>
-        <div id="settings">
-            <select name="kaart-character" id="character-dropdown">
-                <option value="*">*</option>
-                <option value="+">+</option>
-                <option value="-">-</option>
-            </select>
-            <select name="kaart-aantal" id="aantal-dropdown">
-                <option value="3x3">3x3</option>
-                <option value="4x4">4x4</option>
-                <option value="5x5">5x5</option>
-                <option value="6x6">6x6</option>
-                <option value="7x7">7x7</option>
-            </select>
-        </div>
-        <div id="color-selection">
-            <br> <!-- Hier moet color selection buttons-->
-        </div>
-        <button id="start-button">Start</button>
-    </div>
+    <button id="start-button">Start</button>
+</div>
 </body>
 </html>
