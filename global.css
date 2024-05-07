@@ -27,11 +27,13 @@ p {
 }
 
 #information {
-    margin:75px;
+    margin: 75px;
 }
 
-#board{
-    text-align: center;
+#board {
+    display: flex;
+    justify-content: center;
+    text-align: left;
 }
 
 .grid-container {
@@ -51,7 +53,6 @@ p {
     font-size: 64px;
     width: 30vw;
     height: 7vh;
-
 }
 
 select {
@@ -86,4 +87,34 @@ select {
     #information {
         float:right;
     }
+}
+.color-button {
+    font-size: 20px;
+    width: 40vw;
+    height: 3vh;
+}
+
+#closed-card-button {
+    background-color: lightgreen;
+}
+
+#opened-card-button {
+    background-color: darkgreen;
+}
+
+#found-card-button {
+    background-color: purple;
+}
+
+.color-button-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    flex-direction: column;
+}
+
+#color-selection {
+    display: flex;
+    justify-content: left;
+    margin: 75px;
 }
