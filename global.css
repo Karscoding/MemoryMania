@@ -1,7 +1,7 @@
 body {
     background-color: burlywood;
     color: black;
-    font-family: Consolas;
+    font-family: Consolas, serif;
     font-size: 36px;
 }
 
@@ -14,29 +14,29 @@ p {
 }
 
 #header {
-    font-size: 64px;
+    font-size: 5vw;
     text-align: center;
     margin: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 #game-state {
     text-align: center;
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: bold;
 }
 
 #information {
-    margin: 75px;
 }
 
 #board {
-    display: flex;
+    width: 100vw;
     justify-content: center;
     text-align: left;
 }
 
 .grid-container {
+    width:95vw;
     display: inline-grid;
     grid: auto-flow / 1fr 1fr 1fr;
     left: auto;
@@ -44,34 +44,34 @@ p {
 
 .grid-item {
     margin: 10px;
-    padding: 100px;
+    padding: 10vw;
     background-color: lightgreen;
     text-align: center;
 }
 
 #start-button {
     font-size: 64px;
-    width: 30vw;
-    height: 7vh;
+    width: 25vw;
+    height: 100px;
 }
 
 select {
-    font-size: 40px;
-    width: 200px;
-    height: 75px;
-    margin: 25px;
+    font-size: 20px;
+    width: 75px;
+    height: 30px;
+    margin: 15px;
 }
 
+/* When screen enters desktop or landscape mode */
 @media screen and (min-width: 1000px) {
     body {
-        display: inline;
-        margin: 0px;
+        margin: 0;
         overflow-y: hidden;
     }
 
     #header {
-        font-size: 30px;
-        padding:0px;
+        font-size: 36px;
+        padding:0;
     }
 
     #game-state {
@@ -79,17 +79,28 @@ select {
     }
 
     #board {
+        width:40vw;
         float:left;
     }
 
+    .grid-container {
+        width:30vw;
+    }
+
+    .grid-item {
+        padding: clamp(50px, 8vw, 100px);
+    }
+
     #information {
+        width:40vw;
+        font-size: clamp(12px, 2vw, 24px);
         float:right;
     }
 }
 
 .color-button {
     font-size: 20px;
-    width: 40vw;
+    width: 20vw;
     height: 3vh;
 }
 
@@ -115,5 +126,5 @@ select {
 #color-selection {
     display: flex;
     justify-content: left;
-    margin: 75px;
+    margin: 15px;
 }
