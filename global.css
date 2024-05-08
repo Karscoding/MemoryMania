@@ -1,6 +1,6 @@
 body {
-    background-color: burlywood;
-    color: black;
+    background-color: #262626;
+    color: lightgrey;
     font-family: Consolas, serif;
     font-size: 36px;
 }
@@ -39,19 +39,21 @@ p {
     width:95vw;
     display: inline-grid;
     grid: auto-flow / 1fr 1fr 1fr;
-    left: auto;
 }
 
 .grid-item {
     margin: 10px;
     padding: 10vw;
-    background-color: lightgreen;
+    font-size: 50px;
+    background-color: #11417c;
     text-align: center;
 }
 
 #start-button {
     font-size: 64px;
     width: 25vw;
+    background-color: #efe897;
+    border-radius: 25px;
     height: 100px;
 }
 
@@ -88,7 +90,7 @@ select {
     }
 
     .grid-item {
-        padding: clamp(50px, 8vw, 100px);
+        padding: clamp(50px, 8vw, 95px);
     }
 
     #information {
