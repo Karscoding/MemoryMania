@@ -64,10 +64,11 @@ select {
 
 @media screen and (min-width: 1000px) {
     body {
-        display:inline;
-        margin:0px;
+        display: inline;
+        margin: 0px;
         overflow-y: hidden;
     }
+
     #header {
         font-size: 30px;
         padding:0px;
@@ -81,13 +82,11 @@ select {
         float:left;
     }
 
-    .grid-container {
-    }
-
     #information {
         float:right;
     }
 }
+
 .color-button {
     font-size: 20px;
     width: 40vw;
