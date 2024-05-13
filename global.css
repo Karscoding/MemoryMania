@@ -26,7 +26,7 @@ p {
     font-weight: bold;
 }
 
-#information {
+#stats {
 }
 
 #board {
@@ -93,7 +93,7 @@ select {
         padding: clamp(50px, 8vw, 95px);
     }
 
-    #information {
+    #stats {
         width:40vw;
         font-size: clamp(12px, 2vw, 24px);
         float:right;
@@ -107,7 +107,7 @@ select {
 }
 
 #closed-card-button {
-    background-color: lightgreen;
+    background-color: #11417c;
 }
 
 #opened-card-button {
