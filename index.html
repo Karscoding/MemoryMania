@@ -14,7 +14,11 @@
     <div id="game-state">
         <p>Verlopen tijd: xx seconden.</p>
         <p>Gevonden kaart paren: x</p>
-        <br> <!--Hier moet resterende tijd progress bar-->
+    </div>
+    <div class="progress-container">
+        <div class="progress-loader">
+            <div class="progress"></div>
+        </div>
     </div>
 </div>
 <div id="board">
@@ -65,54 +69,6 @@
     </div>
     <button id="start-button">Start</button>
 </div>
-<script>
-    //manier van switchen tussen cardstates kan gerefactored worden tot 1 slimmere method in de toekomst
-    let cardState = 'closed';
-
-    function setCardStateToOpened(item) {
-        cardState = 'opened';
-        cardStateChecker();
-        setCardColor(item);
-    }
-
-    function setCardStateToClosed(item) {
-        //todo nadat progressbar klaar is met tellen deze functie callen, nadat 2 cards geopend zijn die niet matchen ook deze functie callen.
-        cardState = 'closed';
-        cardStateChecker();
-        setCardColor(item);
-    }
-
-    function setCardStateToFound(item) {
-        //todo als 2 cards matchen call deze functie
-        cardState = 'found';
-        cardStateChecker();
-        setCardColor(item);
-    }
-
-    function cardStateChecker() {
-        //debug line om cardstate te kunnen zien in inspector
-        console.log('state is:', cardState);
-    }
-
-    function setCardColor(item) {
-        switch (cardState) {
-            case 'closed':
-                item.style.backgroundColor = getComputedStyle(document.getElementById('closed-card-button')).backgroundColor;
-                break;
-            case 'opened':
-                item.style.backgroundColor = getComputedStyle(document.getElementById('opened-card-button')).backgroundColor;
-                break;
-            case 'found':
-                item.style.backgroundColor = getComputedStyle(document.getElementById('found-card-button')).backgroundColor;
-                break;
-            default:
-                console.log('geen matchende state')
-                break;
-        }
-
-        console.log('Setting card color');
-    }
-
-</script>
+    <script src="game.js"></script>
 </body>
 </html>
