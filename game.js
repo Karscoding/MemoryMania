@@ -49,6 +49,7 @@ function generateDivs(chars, container) {
 
 function updateSize() {
     amountOfCards = getSize();
+    chars = generateChars();
     resetGrid();
     generateGrid(chars, gridContainer);
 }
