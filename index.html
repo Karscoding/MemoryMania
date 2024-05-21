@@ -23,15 +23,6 @@
 </div>
 <div id="board">
     <div id="grid-container">
-        <div class="grid-item" onclick="setCardStateToOpened(this)">1</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">2</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">3</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">4</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">5</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">6</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">7</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">8</div>
-        <div class="grid-item" onclick="setCardStateToOpened(this)">9</div>
     </div>
 </div>
 <div id="stats">
@@ -48,17 +39,16 @@
     <br>
     <p>Gemiddelde speeltijd: x:xx</p>
     <div id="settings">
-        <select name="kaart-character" id="character-dropdown">
+        <select name="card-character" id="character-dropdown">
             <option value="*">*</option>
             <option value="+">+</option>
             <option value="-">-</option>
         </select>
-        <select name="kaart-aantal" id="aantal-dropdown">
-            <option value="3x3">3x3</option>
-            <option value="4x4">4x4</option>
-            <option value="5x5">5x5</option>
-            <option value="6x6">6x6</option>
-            <option value="7x7">7x7</option>
+        <select name="card-amount" id="amount-dropdown">
+            <option value="3">3x3</option>
+            <option value="4">4x4</option>
+            <option value="5">5x5</option>
+            <option value="6">6x6</option>
         </select>
     </div>
     <div id="color-selection">

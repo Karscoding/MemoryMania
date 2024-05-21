@@ -54,7 +54,7 @@ div {
 #start-button {
     font-size: 64px;
     width: 25vw;
-    background-color: #E5DDC5;
+    background-color: #F6F193;
     border-radius: 25px;
     height: 100px;
 }
@@ -91,6 +91,37 @@ select {
     transition: 5s;
 }
 
+.color-button {
+    font-size: 20px;
+    width: 20vw;
+    height: 3vh;
+}
+
+#closed-card-button {
+    background-color: #99c6ff;
+}
+
+#opened-card-button {
+    background-color: #95ff95;
+}
+
+#found-card-button {
+    background-color: #ffaeff;
+}
+
+.color-button-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    flex-direction: column;
+}
+
+#color-selection {
+    display: flex;
+    justify-content: left;
+    margin: 15px;
+}
+
 @keyframes loading_44 {
     0% {
         width: 0;
@@ -104,7 +135,7 @@ select {
 @media screen and (min-width: 1000px) {
     body {
         margin: 0;
-        overflow-y: hidden;
+        /*overflow-y: hidden;*/
     }
 
     #header {
@@ -139,33 +170,3 @@ select {
     }
 }
 
-.color-button {
-    font-size: 20px;
-    width: 20vw;
-    height: 3vh;
-}
-
-#closed-card-button {
-    background-color: #99c6ff;
-}
-
-#opened-card-button {
-    background-color: #95ff95;
-}
-
-#found-card-button {
-    background-color: #ffaeff;
-}
-
-.color-button-container {
-    display: flex;
-    align-items: flex-start;
-    margin: 10px;
-    flex-direction: column;
-}
-
-#color-selection {
-    display: flex;
-    justify-content: left;
-    margin: 15px;
-}

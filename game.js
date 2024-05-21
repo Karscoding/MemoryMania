@@ -2,6 +2,76 @@ let cardState = 'closed';
 let openedCards = [];
 let maxOpenedCardsReached = false;
 
+let amountOfCards;
+
+let chars = [];
+
+const gridContainer = document.getElementById("grid-container");
+
+const sizeDropdown = document.getElementById("amount-dropdown");
+const characterDropdown = document.getElementById("character-dropdown");
+
+sizeDropdown.addEventListener("change", updateSize);
+
+
+// Code runs when document is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    amountOfCards = getSize();
+    chars = generateChars();
+    generateGrid(chars, gridContainer);
+})
+
+function resetGrid() {
+    gridContainer.innerHTML = "";
+}
+
+function generateGrid(chars, container) {
+    resetGrid();
+    generateDivs(chars, container);
+    shuffleArray(chars);
+    generateDivs(chars, container);
+}
+
+function generateDivs(chars, container) {
+    for (let i = 0; i < chars.length; i++) {
+        let card = document.createElement("div");
+        card.className = "grid-item";
+        card.innerHTML = "<p>"+chars[i]+"</p>";
+        container.appendChild(card);
+    }
+}
+
+function updateSize() {
+    amountOfCards = getSize();
+    resetGrid();
+    generateGrid(chars, gridContainer);
+}
+
+function getSize() {
+    return sizeDropdown.value * sizeDropdown.value;
+}
+
+function generateChars() {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let result = [];
+    for (let i = 0; i < amountOfCards / 2; i++) {
+        let char = characters.charAt(Math.floor(Math.random() * characters.length));
+        if (result.includes(char)) {
+            i--;
+        } else {
+            result[i] = char;
+        }
+    }
+    return result;
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 function setCardStateToOpened(item) {
     cardState = 'opened';
     openedCards.push(item);
