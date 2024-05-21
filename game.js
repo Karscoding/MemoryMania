@@ -1,6 +1,8 @@
-let cardState = 'closed';
 let openedCards = [];
 let maxOpenedCardsReached = false;
+
+let firstCard = null;
+let secondCard = null;
 
 let amountOfCards;
 
@@ -12,7 +14,6 @@ const sizeDropdown = document.getElementById("amount-dropdown");
 const characterDropdown = document.getElementById("character-dropdown");
 
 sizeDropdown.addEventListener("change", updateSize);
-
 
 // Code runs when document is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,6 +31,9 @@ function generateGrid(chars, container) {
     generateDivs(chars, container);
     shuffleArray(chars);
     generateDivs(chars, container);
+
+    container.style.setProperty('grid-template-columns', 'repeat(' + sizeDropdown.value + ', 1fr');
+    container.style.setProperty('grid-template-rows', 'repeat(' + sizeDropdown.value + ', 1fr');
 }
 
 function generateDivs(chars, container) {
@@ -37,6 +41,8 @@ function generateDivs(chars, container) {
         let card = document.createElement("div");
         card.className = "grid-item";
         card.innerHTML = "<p>"+chars[i]+"</p>";
+        card.addEventListener("click", updateCardState);
+        setCardColor('closed', card);
         container.appendChild(card);
     }
 }
@@ -69,6 +75,25 @@ function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function updateCardState() {
+    if (this === firstCard) return;
+    if (firstCard === null) {
+        firstCard = this;
+    }
+
+    setCardColor('opened', this);
+
+    openedCards.push(this);
+    setCardColor();
+
+    if (openedCards.length === 1) {
+        startProgressLoader();
+    } else if (openedCards.length === 2) {
+        maxOpenedCardsReached = true;
+        stopProgressLoader();
     }
 }
 
@@ -106,16 +131,16 @@ function cardStateChecker() {
     // debug line om cardstates te zien in inspector
 }
 
-function setCardColor(item) {
+function setCardColor(cardState, card) {
     switch (cardState) {
         case 'closed':
-            item.style.backgroundColor = getComputedStyle(document.getElementById('closed-card-button')).backgroundColor;
+            card.style.backgroundColor = getComputedStyle(document.getElementById('closed-card-button')).backgroundColor;
             break;
         case 'opened':
-            item.style.backgroundColor = getComputedStyle(document.getElementById('opened-card-button')).backgroundColor;
+            card.style.backgroundColor = getComputedStyle(document.getElementById('opened-card-button')).backgroundColor;
             break;
         case 'found':
-            item.style.backgroundColor = getComputedStyle(document.getElementById('found-card-button')).backgroundColor;
+            card.style.backgroundColor = getComputedStyle(document.getElementById('found-card-button')).backgroundColor;
             break;
         default:
             console.log('geen matchende state')
@@ -134,7 +159,7 @@ function startProgressLoader() {
         progress.style.animation = ''; //voor amimatiereset
         progress.style.width = '0%';
 
-        openedCards.forEach(card => setCardStateToClosed(card));
+        openedCards.forEach(card => setCardColor('closed', card));
         openedCards = [];
 
         progressLoader.style.visibility = 'hidden';
