@@ -3,15 +3,17 @@ let openedCards = [];
 let maxOpenedCardsReached = false;
 
 function setCardStateToOpened(item) {
-    if (maxOpenedCardsReached) return;
     cardState = 'opened';
     openedCards.push(item);
     cardStateChecker();
     setCardColor(item);
 
-    if (openedCards.length === 2) {
-        maxOpenedCardsReached = true
+    if (openedCards.length === 1) {
         startProgressLoader();
+    } else if (openedCards.length === 2) {
+        maxOpenedCardsReached = true
+        stopProgressLoader()
+        //todo call hier de match functie
     }
 }
 
@@ -27,7 +29,6 @@ function setCardStateToFound(item) {
     cardStateChecker();
     setCardColor(item);
     openedCards = [];
-    //todo als cards matchen call deze functie en zet ze ermee in apart array van found cards oid
 }
 
 function cardStateChecker() {
@@ -68,5 +69,30 @@ function startProgressLoader() {
 
         progressLoader.style.visibility = 'hidden';
         maxOpenedCardsReached = false;
-    }, { once: true });
+    }, {once: true});
+}
+
+function stopProgressLoader() {
+    const progressLoader = document.querySelector('.progress-loader');
+    const progress = document.querySelector('.progress');
+    progress.style.animation = '';
+    progress.style.width = '0%';
+    progressLoader.style.visibility = 'hidden';
+    checkForMatch()
+}
+
+function checkForMatch() {
+    const [firstCard, secondCard] = openedCards;
+
+    //todo cards moeten in index.html iets krijgen waardoor ze matchen met andere cards, placeholder is checken of firstcard. innertext gelijk is aan die van secondcard wat nooit het geval zal zijn.
+
+    if (firstCard.innerText === secondCard.innerText) {
+        setCardStateToFound(firstCard);
+        setCardStateToFound(secondCard);
+    } else {
+        setCardStateToClosed(firstCard);
+        setCardStateToClosed(secondCard);
+        openedCards = [];
+    }
+    maxOpenedCardsReached = false;
 }
