@@ -22,7 +22,7 @@
     </div>
 </div>
 <div id="board">
-    <div class="grid-container">
+    <div id="grid-container">
         <div class="grid-item" onclick="setCardStateToOpened(this)">1</div>
         <div class="grid-item" onclick="setCardStateToOpened(this)">2</div>
         <div class="grid-item" onclick="setCardStateToOpened(this)">3</div>
@@ -37,14 +37,15 @@
 <div id="stats">
     <div id="leaderboard">
         <h2>Top Vijf</h2>
-        <ul>
-            <li>1. Barack Obama</li>
-            <li>2. Joe Biden</li>
-            <li>3. Super Mario</li>
-            <li>4. Bowser</li>
-            <li>5. Princess Peach</li>
-        </ul>
+        <ol>
+            <li>Barack Obama</li>
+            <li>Joe Biden</li>
+            <li>Super Mario</li>
+            <li>Bowser</li>
+            <li>Princess Peach</li>
+        </ol>
     </div>
+    <br>
     <p>Gemiddelde speeltijd: x:xx</p>
     <div id="settings">
         <select name="kaart-character" id="character-dropdown">

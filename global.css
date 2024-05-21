@@ -1,22 +1,22 @@
 body {
-    background-color: #262626;
-    color: lightgrey;
+    background-color: #A5DD9B;
+    color: #4b4b4b;
     font-family: Consolas, serif;
     font-size: 36px;
 }
 
-h1 {
+* {
     margin: 0;
 }
 
-p {
-    margin: 0;
+div {
+    background-color: #C5EBAA;
 }
 
 #header {
     font-size: 5vw;
+    margin: 25px 0 25px 0;
     text-align: center;
-    margin: 0;
     width: 100vw;
 }
 
@@ -32,27 +32,29 @@ p {
 #board {
     width: 100vw;
     justify-content: center;
-    text-align: left;
+    text-align: center;
 }
 
-.grid-container {
-    width:95vw;
-    display: inline-grid;
+#grid-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
     grid: auto-flow / 1fr 1fr 1fr;
+    text-align: center;
 }
 
 .grid-item {
     margin: 10px;
     padding: 10vw;
     font-size: 50px;
-    background-color: #11417c;
+    background-color: #F2C18D;
     text-align: center;
 }
 
 #start-button {
     font-size: 64px;
     width: 25vw;
-    background-color: #efe897;
+    background-color: #E5DDC5;
     border-radius: 25px;
     height: 100px;
 }
@@ -63,6 +65,7 @@ select {
     height: 30px;
     margin: 15px;
 }
+
 .progress-loader {
     width: 20vw;
     background: rgba(236, 236, 238, 0.253);
@@ -114,20 +117,23 @@ select {
     }
 
     #board {
-        width:40vw;
+        width:55vw;
+        height:67vh;
         float:left;
     }
 
-    .grid-container {
-        width:30vw;
+    #grid-container {
+        padding: 2vw;
     }
 
     .grid-item {
-        padding: clamp(50px, 8vw, 95px);
+        padding: clamp(10px, 8vw, 95px);
     }
 
     #stats {
-        width:40vw;
+        height: 67vh;
+        padding: 2vw 2vw 2vw 8vw;
+        width:29vw;
         font-size: clamp(12px, 2vw, 24px);
         float:right;
     }
@@ -140,15 +146,15 @@ select {
 }
 
 #closed-card-button {
-    background-color: #11417c;
+    background-color: #99c6ff;
 }
 
 #opened-card-button {
-    background-color: darkgreen;
+    background-color: #95ff95;
 }
 
 #found-card-button {
-    background-color: purple;
+    background-color: #ffaeff;
 }
 
 .color-button-container {
