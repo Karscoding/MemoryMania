@@ -9,7 +9,7 @@ function startProgressLoader() {
         progress.style.animation = ''; //voor amimatiereset
         progress.style.width = '0%';
 
-        openedCards.forEach(card => setCardColor('closed', card));
+        openedCards.forEach(card => setCardState('closed', card));
         openedCards = [];
 
         progressLoader.style.visibility = 'hidden';
@@ -23,5 +23,4 @@ function stopProgressLoader() {
     progress.style.animation = '';
     progress.style.width = '0%';
     progressLoader.style.visibility = 'hidden';
-    checkForMatch()
 }

@@ -2,18 +2,20 @@ function updateCardState() {
     if (this === firstCard) return;
     if (firstCard === null) {
         firstCard = this;
+    } else {
+        secondCard = this;
     }
 
-    setCardColor('opened', this);
+    setCardState('opened', this);
 
     openedCards.push(this);
-    setCardColor();
 
     if (openedCards.length === 1) {
         startProgressLoader();
     } else if (openedCards.length === 2) {
         maxOpenedCardsReached = true;
         stopProgressLoader();
+        checkForMatch();
     }
 }
 
@@ -22,7 +24,7 @@ function cardStateChecker() {
     // debug line om cardstates te zien in inspector
 }
 
-function setCardColor(cardState, card) {
+function setCardState(cardState, card) {
     switch (cardState) {
         case 'closed':
             card.style.backgroundColor = getComputedStyle(document.getElementById('closed-card-button')).backgroundColor;

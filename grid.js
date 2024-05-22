@@ -17,7 +17,7 @@ function generateDivs(chars, container) {
         card.className = "grid-item";
         card.innerHTML = "<p>"+chars[i]+"</p>";
         card.addEventListener("click", updateCardState);
-        setCardColor('closed', card);
+        setCardState('closed', card);
         container.appendChild(card);
     }
 }

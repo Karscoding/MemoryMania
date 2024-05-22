@@ -54,18 +54,22 @@ function shuffleArray(array) {
     }
 }
 
+function checkForWin() {
+
+}
+
 function checkForMatch() {
-    const [firstCard, secondCard] = openedCards;
-
     //todo cards moeten in index.html iets krijgen waardoor ze matchen met andere cards, placeholder is checken of firstcard. innertext gelijk is aan die van secondcard wat nooit het geval zal zijn.
-
     if (firstCard.innerText === secondCard.innerText) {
-        setCardColor('found', firstCard);
-        setCardColor('found', secondCard);
+        setCardState('found', firstCard);
+        setCardState('found', secondCard);
     } else {
-        setCardColor('closed', firstCard);
-        setCardColor('closed', secondCard);
-        openedCards = [];
+        setCardState('closed', firstCard);
+        setCardState('closed', secondCard);
+
     }
+    openedCards = [];
+    firstCard = null;
+    secondCard = null;
     maxOpenedCardsReached = false;
 }
