@@ -7,6 +7,12 @@ function resetGrid(container) {
     container.innerHTML = "";
 }
 
+function regenerateGrid(container) {
+    chars = generateChars();
+    resetGrid(gridContainer);
+    generateGrid(chars, gridContainer, sizeDropdown.value);
+}
+
 function generateGrid(chars, container, amount) {
     resetGrid(container);
     generateDivs(chars, container);

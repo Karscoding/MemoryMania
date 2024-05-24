@@ -25,6 +25,11 @@ const openedCardColor = document.getElementById("opened-card-color");
 const foundCardColor = document.getElementById("found-card-color");
 
 sizeDropdown.addEventListener("change", updateSize);
+characterDropdown.addEventListener("change", regenerateGrid);
+
+closedCardColor.addEventListener("change", regenerateGrid);
+openedCardColor.addEventListener("change", regenerateGrid);
+foundCardColor.addEventListener("change", regenerateGrid);
 
 // Code runs when document is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,9 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function updateSize() {
     amountOfCards = getSize();
-    chars = generateChars();
-    resetGrid(gridContainer);
-    generateGrid(chars, gridContainer);
+    regenerateGrid(gridContainer);
 }
 
 function updateCardsFoundText() {
