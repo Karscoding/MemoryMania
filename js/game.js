@@ -29,6 +29,7 @@ function checkIfAllFound() {
 
 function displayWin() {
     stopTimer();
+    winMessage.getElementsByClassName("win-text")[0].innerText = "Tijd: " +  timerCount + "s";
     winMessage.style.display = "block";
 }
 

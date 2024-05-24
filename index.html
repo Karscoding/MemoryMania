@@ -47,6 +47,7 @@
             <option value="^-^">^-^</option>
         </select>
         <select name="card-amount" id="amount-dropdown">
+            <option value="2">2x2</option>
             <option value="4">4x4</option>
             <option value="6">6x6</option>
         </select>
@@ -70,8 +71,8 @@
     <button id="start-button" onclick="restart()">Restart</button>
 </div>
 <div id="win-message">
-    <h1>You Won!</h1>
-    <p>Placeholder Text</p>
+    <h1 class="win-header">You Won!</h1>
+    <p class="win-text">Placeholder Text</p>
     <button id="replay-button" onclick="restart()">Restart</button>
 </div>
 <script src="js/card.js"></script>
