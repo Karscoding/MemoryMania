@@ -51,9 +51,18 @@
     </div>
     <div id="color-selection">
         <div class="color-button-container">
-            <button class="color-button" id="closed-card-button">Verborgen kaarten</button>
-            <button class="color-button" id="opened-card-button">Geopende kaarten</button>
-            <button class="color-button" id="found-card-button"> Gevonden kaarten</button>
+            <label>
+                Verborgen Kaart
+                <input type="color" value="#99c6ff" name="closed-card-color" id="closed-card-color">
+            </label>
+            <label>
+                Geopende Kaart
+                <input type="color" value="#95ff95" name="opened-card-color" id="opened-card-color">
+            </label>
+            <label>
+                Gevonden Kaart
+                <input type="color" value="#ffaeff" name="found-card-color" id="found-card-color">
+            </label>
         </div>
     </div>
     <button id="start-button" onclick="restart()">Restart</button>
@@ -63,10 +72,10 @@
     <p>Placeholder Text</p>
     <button id="replay-button" onclick="restart()">Restart</button>
 </div>
-<script src="card.js"></script>
-<script src="grid.js"></script>
-<script src="progressbar.js"></script>
-<script src="game.js"></script>
-<script src="index.js"></script>
+<script src="js/card.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/progressbar.js"></script>
+<script src="js/game.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

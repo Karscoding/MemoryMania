@@ -20,6 +20,10 @@ const characterDropdown = document.getElementById("character-dropdown");
 const foundCardsText = document.getElementById("found-cards");
 const runningTimeText = document.getElementById("running-time");
 
+const closedCardColor = document.getElementById("closed-card-color");
+const openedCardColor = document.getElementById("opened-card-color");
+const foundCardColor = document.getElementById("found-card-color");
+
 sizeDropdown.addEventListener("change", updateSize);
 
 // Code runs when document is loaded
