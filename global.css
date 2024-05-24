@@ -58,7 +58,7 @@ div {
 #start-button {
     font-size: 64px;
     width: 25vw;
-    background-color: #F6F193;
+    background-color: white;
     border-radius: 25px;
     height: 100px;
 }
@@ -126,6 +126,24 @@ select {
     margin: 15px;
 }
 
+#win-message {
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    top: 32vh;
+    left: 24.15vw;
+    padding: 80px;
+    border-radius: 50px;
+    display: none;
+}
+
+#win-message #replay-button {
+    width: 150px;
+    height: 35px;
+    margin-top: 50px;
+    background-color: white;
+}
+
 @keyframes loading_44 {
     0% {
         width: 0;
@@ -168,9 +186,13 @@ select {
     #stats {
         height: 67vh;
         padding: 2vw 2vw 2vw 8vw;
-        width:29vw;
+        width: 29vw;
         font-size: clamp(12px, 2vw, 24px);
-        float:right;
+        float: right;
+    }
+
+    #win-message {
+        left: 37vw;
     }
 }
 

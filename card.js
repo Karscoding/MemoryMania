@@ -1,4 +1,7 @@
 function updateCardState() {
+    if (!timer) {
+        startTimer();
+    }
     if (this === firstCard) return;
     if (firstCard === null) {
         firstCard = this;
@@ -38,5 +41,24 @@ function setCardState(cardState, card) {
         default:
             console.log('geen matchende state')
             break;
+    }
+}
+
+function checkForMatch() {
+    if (firstCard.innerText === secondCard.innerText) {
+        setCardState('found', firstCard);
+        setCardState('found', secondCard);
+        amountOfPairsFound++;
+        updateCardsFoundText();
+    } else {
+        setCardState('closed', firstCard);
+        setCardState('closed', secondCard);
+    }
+    openedCards = [];
+    firstCard = null;
+    secondCard = null;
+    maxOpenedCardsReached = false;
+    if (checkIfAllFound()) {
+        displayWin();
     }
 }

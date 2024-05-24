@@ -4,14 +4,21 @@ let maxOpenedCardsReached = false;
 let firstCard = null;
 let secondCard = null;
 
+let timer;
+let timerCount;
+
 let amountOfCards;
+let amountOfPairsFound = 0;
 
 let chars = [];
 
-const gridContainer = document.getElementById("grid-container");
+const winMessage = document.getElementById("win-message");
 
 const sizeDropdown = document.getElementById("amount-dropdown");
 const characterDropdown = document.getElementById("character-dropdown");
+
+const foundCardsText = document.getElementById("found-cards");
+const runningTimeText = document.getElementById("running-time");
 
 sizeDropdown.addEventListener("change", updateSize);
 
@@ -29,47 +36,22 @@ function updateSize() {
     generateGrid(chars, gridContainer);
 }
 
+function updateCardsFoundText() {
+    foundCardsText.innerText = "Gevonden kaart paren: " + amountOfPairsFound;
+}
+
+function startTimer() {
+    timerCount = 0;
+    timer = setInterval(() => {
+        timerCount++;
+        runningTimeText.innerText = "Verlopen tijd: " + timerCount + "s";
+    }, 1000)
+}
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
 function getSize() {
     return sizeDropdown.value * sizeDropdown.value;
-}
-
-function generateChars() {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let result = [];
-    for (let i = 0; i < amountOfCards / 2; i++) {
-        let char = characters.charAt(Math.floor(Math.random() * characters.length));
-        if (result.includes(char)) {
-            i--;
-        } else {
-            result[i] = char;
-        }
-    }
-    return result;
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function checkForWin() {
-
-}
-
-function checkForMatch() {
-    //todo cards moeten in index.html iets krijgen waardoor ze matchen met andere cards, placeholder is checken of firstcard. innertext gelijk is aan die van secondcard wat nooit het geval zal zijn.
-    if (firstCard.innerText === secondCard.innerText) {
-        setCardState('found', firstCard);
-        setCardState('found', secondCard);
-    } else {
-        setCardState('closed', firstCard);
-        setCardState('closed', secondCard);
-
-    }
-    openedCards = [];
-    firstCard = null;
-    secondCard = null;
-    maxOpenedCardsReached = false;
 }

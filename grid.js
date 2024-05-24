@@ -1,3 +1,8 @@
+// Elements
+const gridContainer = document.getElementById("grid-container");
+
+
+// Functions
 function resetGrid(container) {
     container.innerHTML = "";
 }
