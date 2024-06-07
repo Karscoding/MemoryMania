@@ -26,7 +26,14 @@ function generateDivs(chars, container) {
     for (let i = 0; i < chars.length; i++) {
         let card = document.createElement("div");
         card.className = "grid-item closed";
-        card.innerHTML = "<p class='token'>"+ characterDropdown.value + "</p><p class='character'>"+chars[i]+"</p>";
+        card.dataset.state = "closed";
+        card.dataset.pair = chars[i];
+        const imagePromise = loadImage("https://cataas.com/cat?timestamp=" + new Date().getTime());
+        card.innerHTML = "<p class='token'>"+ characterDropdown.value + "</p><img alt='' class='card-image' src=''/><p class='character'>"+chars[i]+"</p>";
+        imagePromise.then(url => {
+            card.querySelector('.card-image').src = url;
+            console.log(url);
+        })
         card.addEventListener("click", updateCardState);
 
         card.querySelector(".character").style.display = 'none';

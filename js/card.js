@@ -42,10 +42,11 @@ function closeOpenedCards() {
 }
 
 function getCardState(card) {
-    return card.className.split(' ')[1];
+    return card.dataset.state;
 }
 
 function setCardState(cardState, card) {
+    card.dataset.state = cardState;
     switch (cardState) {
         case 'closed':
             makeCardInvisible(card);
@@ -62,7 +63,6 @@ function setCardState(cardState, card) {
             console.log('geen matchende state')
             break;
     }
-    card.className = "grid-item " + cardState;
 }
 
 function makeCardVisible(card) {

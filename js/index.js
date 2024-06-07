@@ -47,6 +47,19 @@ function updateCardsFoundText() {
     foundCardsText.innerText = "Gevonden kaart paren: " + amountOfPairsFound;
 }
 
+const loadImage = (url) => {
+    return new Promise((resolve) => {
+        fetch(url, {mode: 'cors'})
+            .then((resp) => resp.blob())
+            .then((blob) => {
+                return URL.createObjectURL(blob);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    })
+}
+
 function startTimer() {
     timerCount = 0;
     timer = setInterval(() => {
