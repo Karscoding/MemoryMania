@@ -51,6 +51,14 @@ div {
     text-align: center;
 }
 
+.card-image {
+    height: 100px;
+}
+
+.character {
+    display: none;
+}
+
 .grid-item:hover {
     cursor: pointer;
 }

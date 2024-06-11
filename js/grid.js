@@ -8,7 +8,7 @@ function resetGrid(container) {
 }
 
 function regenerateGrid(container) {
-    chars = generateChars();
+    chars = generatePairs();
     resetGrid(gridContainer);
     generateGrid(chars, gridContainer, sizeDropdown.value);
 }
@@ -23,23 +23,25 @@ function generateGrid(chars, container, amount) {
 }
 
 function generateDivs(chars, container) {
-    for (let i = 0; i < chars.length; i++) {
+    chars.forEach(pair => {
+        console.log(pair.Character);
         let card = document.createElement("div");
         card.className = "grid-item closed";
         card.dataset.state = "closed";
-        card.dataset.pair = chars[i];
-        const imagePromise = loadImage("https://cataas.com/cat?timestamp=" + new Date().getTime());
-        card.innerHTML = "<p class='token'>"+ characterDropdown.value + "</p><img alt='' class='card-image' src=''/><p class='character'>"+chars[i]+"</p>";
-        imagePromise.then(url => {
-            card.querySelector('.card-image').src = url;
-            console.log(url);
-        })
-        card.addEventListener("click", updateCardState);
-
+        card.dataset.pair = pair.Character;
+        console.log(pair);
+        console.log(pair.imageUrl);
+        card.innerHTML = `
+                <p class='token'>${characterDropdown.value}</p>
+                <img alt='' class='card-image' src="${pair.imageUrl}" />
+                <p class='character'>${pair.Character}</p>
+            `;
         card.querySelector(".character").style.display = 'none';
+
+        card.addEventListener("click", updateCardState);
 
         setCardState('closed', card);
 
         container.appendChild(card);
-    }
+    });
 }

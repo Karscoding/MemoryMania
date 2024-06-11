@@ -1,4 +1,4 @@
-function generateChars() {
+function generatePairs() {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let result = [];
     for (let i = 0; i < amountOfCards / 2; i++) {
@@ -6,9 +6,18 @@ function generateChars() {
         if (result.includes(char)) {
             i--;
         } else {
-            result[i] = char;
+
+            loadImage("https://cataas.com/cat?timestamp=" + new Date().getTime())
+                .then(objectUrl => {
+                    let array = {Character: char, imageUrl: ""};
+                    array.imageUrl = objectUrl;
+                    console.log("BLOB:" +array.imageUrl);
+                    console.log("BLOB RESULT: "+ array.imageUrl);
+                    result.push(array);
+                });
         }
     }
+    console.log(result);
     return result;
 }
 

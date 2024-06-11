@@ -34,7 +34,7 @@ foundCardColor.addEventListener("change", regenerateGrid);
 // Code runs when document is loaded
 document.addEventListener("DOMContentLoaded", () => {
     amountOfCards = getSize();
-    chars = generateChars();
+    chars = generatePairs();
     generateGrid(chars, gridContainer, sizeDropdown.value);
 })
 
@@ -52,7 +52,7 @@ const loadImage = (url) => {
         fetch(url, {mode: 'cors'})
             .then((resp) => resp.blob())
             .then((blob) => {
-                return URL.createObjectURL(blob);
+                resolve(URL.createObjectURL(blob));
             })
             .catch(error => {
                 console.log(error);

@@ -66,17 +66,17 @@ function setCardState(cardState, card) {
 }
 
 function makeCardVisible(card) {
-    card.querySelector(".character").style.display = "block";
+    card.querySelector(".card-image").style.display = "block";
     card.querySelector(".token").style.display = "none";
 }
 
 function makeCardInvisible(card) {
-    card.querySelector(".character").style.display = "none";
+    card.querySelector(".card-image").style.display = "none";
     card.querySelector(".token").style.display = "block";
 }
 
 function checkForMatch() {
-    if (firstCard.innerText === secondCard.innerText) {
+    if (firstCard.querySelector(".character").innerText === secondCard.querySelector(".character").innerText) {
         setCardState('found', firstCard);
         setCardState('found', secondCard);
         amountOfPairsFound++;
