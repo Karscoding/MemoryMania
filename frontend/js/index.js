@@ -24,6 +24,14 @@ const closedCardColor = document.getElementById("closed-card-color");
 const openedCardColor = document.getElementById("opened-card-color");
 const foundCardColor = document.getElementById("found-card-color");
 
+const connectionText = document.getElementById("connection-test");
+
+const scores = fetch("http://localhost:8000/scores").then(scores => {
+    if (scores.ok) {
+        connectionText.innerText = "Backend Connected";
+    }
+});
+
 sizeDropdown.addEventListener("change", updateSize);
 characterDropdown.addEventListener("change", regenerateGrid);
 
