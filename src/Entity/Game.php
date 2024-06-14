@@ -19,6 +19,9 @@ class Game implements \JsonSerializable {
 
     #[Column(unique:true)] #[Id] #[GeneratedValue] private int $id;
     #[Column(name:'date')] public \DateTime $dateTime;
+    /**
+     * @var float|mixed score is time needed to complete the game
+     */
     #[Column] public float $score;
 
     // optional string for api used in this game
