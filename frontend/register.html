@@ -6,6 +6,7 @@
     <title>Register</title>
 </head>
 <body>
+<a class="nav-button" id="auth-div-button" href="login.html">Login</a>
 <div id="auth-div">
     <h1>Register</h1>
     <form id="register-form">
@@ -36,8 +37,6 @@
         const username = event.target.username.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(username);
-        console.log(password);
 
         const response = await fetch('http://localhost:8000/register', {
             method: 'POST',
@@ -50,9 +49,9 @@
 
         const messageDiv = document.getElementById('message');
         if (response.status === 201) {
-            messageDiv.innerHTML = 'gelukt!';
+            window.location.href = '/login.html';
         } else if (response.status === 400) {
-            messageDiv.innerHTML = 'Invalid request. Verkeerde input jonguh. is username email password';
+            messageDiv.innerHTML = 'Invalid request. Check your input';
         } else {
             messageDiv.innerHTML = 'error';
         }
