@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="global.css">
+    <title>Title</title>
+</head>
+<body>
+    <div id="settings-div">
+        <h1>Settings</h1>
+        <select name="card-character" id="character-dropdown">
+            <option value="*">*</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value=":3">:3</option>
+            <option value="^-^">^-^</option>
+        </select>
+        <select name="card-amount" id="amount-dropdown">
+            <option value="2">2x2</option>
+            <option value="4">4x4</option>
+            <option value="6">6x6</option>
+        </select>
+        <div class="color-button-container">
+            <label>
+                Verborgen Kaart
+                <input type="color" value="#99c6ff" name="closed-card-color" id="closed-card-color">
+            </label>
+            <label>
+                Geopende Kaart
+                <input type="color" value="#95ff95" name="opened-card-color" id="opened-card-color">
+            </label>
+            <label>
+                Gevonden Kaart
+                <input type="color" value="#ffaeff" name="found-card-color" id="found-card-color">
+            </label>
+        </div>
+        <a href="index.html" id="back-button">Terug naar het spelbord</a>
+    </div>
+</body>
+</html>

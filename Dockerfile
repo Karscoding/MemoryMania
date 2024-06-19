@@ -12,6 +12,7 @@ COPY . /usr/src/memory-backend
 WORKDIR /usr/src/memory-backend
 
 # Install dependencies
+ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN composer install
 
 # Create the database (shouldn't really be used in production environments)

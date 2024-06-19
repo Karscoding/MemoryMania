@@ -70,6 +70,14 @@ div {
     border-radius: 15px;
 }
 
+#settings-div {
+    height: 60vh;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 15vh;
+    text-align: center;
+}
+
 .grid-item {
     margin: 10px;
     padding: clamp(6px, 5vw, 50px);
@@ -91,9 +99,14 @@ div {
     position: absolute;
     border-radius: 15px;
 }
+
 #login-button {
     top:0;
     left:10px;
+}
+
+#settings-div-button {
+    left:160px;
 }
 
 #start-button {
@@ -102,6 +115,19 @@ div {
     background-color: white;
     border-radius: 25px;
     height: 100px;
+}
+
+#back-button {
+    justify-content: center;
+    display: inline-flex;
+    color: #4b4b4b;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 35px;
+    position: relative;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 100px;
 }
 
 select {
@@ -156,15 +182,15 @@ select {
 
 .color-button-container {
     display: flex;
-    align-items: flex-start;
-    margin: 10px;
+    align-items: center;
+    margin:10px;
     flex-direction: column;
 }
 
 #color-selection {
-    display: flex;
-    justify-content: left;
     margin: 15px;
+    display:flex;
+    justify-content: center;
 }
 
 #win-message {
