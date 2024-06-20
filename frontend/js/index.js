@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("auth-div-button").style.display = 'none';
         document.getElementById("logout-div-button").style.display = 'block';
         document.getElementById("settings-div-button").style.display = 'block';
+        if (isTokenExpired()) {
+            alert("Expired Token");
+            window.location.href = "login.html";
+        }
         getPreferences().then(preferences => {
             localStorage.setItem('color_found', preferences.color_found);
             localStorage.setItem('color_closed', preferences.color_closed);
@@ -92,4 +96,8 @@ function navigateToLogin() {
 
 function isAuthenticated() {
     return !!localStorage.getItem('user_id');
+}
+
+function isTokenExpired() {
+    return Date.now() >= localStorage.getItem("exp") * 1000;
 }

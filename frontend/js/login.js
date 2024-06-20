@@ -24,6 +24,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
         // Save token to local storage or a cookie
         localStorage.setItem('token', token);
         localStorage.setItem('user_id', tokenPayload['sub']);
+        localStorage.setItem('exp', tokenPayload['exp'].toString());
 
         window.location.href = '/';
     } else if (response.status === 401) {
