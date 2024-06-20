@@ -1,0 +1,27 @@
+#auth-div {
+  background-color: #A5DD9B;
+  color: #4b4b4b;
+  font-family: Consolas, serif;
+  overflow-y:hidden;
+  width:99vw;
+  height: 98.5vh;
+  text-align: center;
+  font-size:50px;
+}
+
+#auth-div input {
+  margin-top:50px;
+  width: 50%;
+  height:60px;
+  font-size:40px;
+}
+
+#auth-div button {
+  width:25%;
+  font-size:40px;
+  height:75px;
+  margin-top:50px;
+  border: 0;
+  background-color:white;
+  border-radius: 15px;
+}

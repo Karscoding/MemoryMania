@@ -21,6 +21,10 @@ export class LoginComponent {
   constructor(private authService: AuthService, private formBuilder: FormBuilder) {
   }
 
+  login() {
+
+  }
+
   submitLogin(form: any): void {
     if (form.valid) {
       this.authService.login(this.account.username, this.account.password);

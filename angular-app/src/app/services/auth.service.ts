@@ -14,7 +14,7 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/api/login_check`, { username, password })
       .subscribe(response => {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/']);
+        window.location.href = 'http://localhost:8080/index.html';
       });
   }
 
