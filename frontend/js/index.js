@@ -41,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Expired Token");
             navigateToLogin();
         }
+        console.log(localStorage.getItem('roles'));
+        if (localStorage.getItem('roles')) {
+            if (localStorage.getItem('roles') === "ROLE_USER,ROLE_ADMIN") {
+                document.getElementById("admin-div-button").style.display = 'block';
+            }
+        }
         getPreferences().then(preferences => {
             localStorage.setItem('color_found', preferences.color_found);
             localStorage.setItem('color_closed', preferences.color_closed);

@@ -72,6 +72,7 @@ div {
 
 #admin-div-button {
     left: 1300px;
+    display:none;
 }
 
 #settings-div {
