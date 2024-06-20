@@ -107,3 +107,25 @@ function isAuthenticated() {
 function isTokenExpired() {
     return Date.now() >= localStorage.getItem("exp") * 1000;
 }
+
+function fetchImage() {
+    // We hebben geprobeerd Cat images te fetchen maar dit gaf CORS errors
+    // Dog images werkte wel maar om een of andere reden werkte dat ook niet omdat de resultaat van de fetch undefined was.
+    // Aan het begin van het project heeft het een tijdje gewerkt maar er is iets veranderd waardoor het niet meer werkte
+    // Wij hebben ontzettend veel uren besteed om dit werkend te krijgen maar het is niet gelukt dus maken wij er dit maar van.
+    fetch("https://media.discordapp.net/attachments/966786650883624990/1184279922336874526/caption.gif?ex=667567e0&is=66741660&hm=7573995a74fa76ffde7f9c842f542033fd24a6aecfc3f17b82ab6c934c59c84c&=&width=420&height=396")
+        .then((response) => response.blob())
+        .then((blob) => {
+            const imageUrl = URL.createObjectURL(blob);
+            const imageElement = document.createElement("img");
+            imageElement.src = imageUrl;
+            const container = document.getElementById("image-container");
+            container.innerHTML = '<p id="fetch-text">Cat Images fetchen werkte niet vanwege CORS errors</p>';
+            container.style.display = 'block';
+            container.appendChild(imageElement);
+        })
+        .catch((error) => console.error(error));
+}
+
+const button = document.getElementById("fetch-image-button");
+button.addEventListener("click", fetchImage);
