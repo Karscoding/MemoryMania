@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("settings-div-button").style.display = 'block';
         if (isTokenExpired()) {
             alert("Expired Token");
-            window.location.href = "login.html";
+            navigateToLogin();
         }
         getPreferences().then(preferences => {
             localStorage.setItem('color_found', preferences.color_found);
@@ -91,7 +91,7 @@ function navigateToSettings() {
 }
 
 function navigateToLogin() {
-    window.location.href = '../login.html';
+    window.location.href = 'http://localhost:4200/login';
 }
 
 function isAuthenticated() {
