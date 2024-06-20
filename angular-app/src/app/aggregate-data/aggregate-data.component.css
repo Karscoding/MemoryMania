@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2 {
+  margin: 20px 0;
+}
+
+ag-charts-angular {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+}

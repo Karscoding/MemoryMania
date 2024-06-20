@@ -10,8 +10,9 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+  getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token');
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
   }
 
   getAggregateData() {
