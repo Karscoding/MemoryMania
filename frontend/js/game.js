@@ -38,3 +38,7 @@ function restart() {
     winMessage.style.display = "none";
     location.reload();
 }
+
+function sendScores() {
+
+}
