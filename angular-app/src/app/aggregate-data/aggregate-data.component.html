@@ -1,27 +1,28 @@
-<div class="container">
-  <h1>Aggregated Data</h1>
+<div>
+  <h2>Aggregate Data</h2>
+  <ul>
+    <li *ngFor="let item of aggregateData">
+      <span *ngIf="item.aantal_spellen !== undefined">Aantal Spellen: {{item.aantal_spellen}}</span>
+      <span *ngIf="item.aantal_spelers !== undefined">Aantal Spelers: {{item.aantal_spelers}}</span>
+      <span *ngIf="item.api !== undefined">API: {{item.api}}, Aantal: {{item.aantal}}</span>
+    </li>
+  </ul>
+</div>
 
-  <div>
-    <h2>Total Games Played</h2>
-    <ag-charts-angular
-      style="height: 400px"
-      [options]="gamesChartOptions">
-    </ag-charts-angular>
-  </div>
+<div>
+  <h2>Players</h2>
+  <ul>
+    <li *ngFor="let player of players">
+      Username: {{player.username}}, Email: {{player.email}}
+    </li>
+  </ul>
+</div>
 
-  <div>
-    <h2>Players</h2>
-    <ag-charts-angular
-      style="height: 400px"
-      [options]="playersChartOptions">
-    </ag-charts-angular>
-  </div>
-
-  <div>
-    <h2>Games Played Per Day</h2>
-    <ag-charts-angular
-      style="height: 400px"
-      [options]="datesChartOptions">
-    </ag-charts-angular>
-  </div>
+<div>
+  <h2>Dates</h2>
+  <ul>
+    <li *ngFor="let date of dates">
+      Date: {{date.date}}, Count: {{date.count}}
+    </li>
+  </ul>
 </div>
