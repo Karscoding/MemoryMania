@@ -17,8 +17,13 @@ document.getElementById('login-form').addEventListener('submit', async function 
         const data = await response.json();
         const token = data.token;
 
+        const arrayToken = token.split('.');
+
+        const tokenPayload = JSON.parse(atob(arrayToken[1]))
+
         // Save token to local storage or a cookie
         localStorage.setItem('token', token);
+        localStorage.setItem('user_id', tokenPayload['sub']);
 
         window.location.href = '/';
     } else if (response.status === 401) {
