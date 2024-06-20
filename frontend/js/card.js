@@ -49,14 +49,14 @@ function setCardState(cardState, card) {
     switch (cardState) {
         case 'closed':
             makeCardInvisible(card);
-            card.style.backgroundColor = closedCardColor.value;
+            card.style.backgroundColor = localStorage.getItem("color_closed");
             break;
         case 'opened':
             makeCardVisible(card);
-            card.style.backgroundColor = openedCardColor.value;
+            card.style.backgroundColor = "red";
             break;
         case 'found':
-            card.style.backgroundColor = foundCardColor.value;
+            card.style.backgroundColor = localStorage.getItem("color_found");
             break;
         default:
             console.log('geen matchende state')

@@ -20,10 +20,6 @@ const characterDropdown = document.getElementById("character-dropdown");
 const foundCardsText = document.getElementById("found-cards");
 const runningTimeText = document.getElementById("running-time");
 
-const closedCardColor = document.getElementById("closed-card-color");
-const openedCardColor = document.getElementById("opened-card-color");
-const foundCardColor = document.getElementById("found-card-color");
-
 const connectionText = document.getElementById("connection-test");
 
 const scores = fetch("http://localhost:8000/scores").then(scores => {
@@ -35,15 +31,32 @@ const scores = fetch("http://localhost:8000/scores").then(scores => {
 sizeDropdown.addEventListener("change", updateSize);
 characterDropdown.addEventListener("change", regenerateGrid);
 
-closedCardColor.addEventListener("change", regenerateGrid);
-openedCardColor.addEventListener("change", regenerateGrid);
-foundCardColor.addEventListener("change", regenerateGrid);
-
 // Code runs when document is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    amountOfCards = getSize();
-    chars = generateChars();
-    generateGrid(chars, gridContainer, sizeDropdown.value);
+    if (isAuthenticated()) {
+        document.getElementById("auth-div-button").style.display = 'none';
+        document.getElementById("logout-div-button").style.display = 'block';
+        document.getElementById("settings-div-button").style.display = 'block';
+        if (isTokenExpired()) {
+            alert("Expired Token");
+            window.location.href = "login.html";
+        }
+        getPreferences().then(preferences => {
+            localStorage.setItem('color_found', preferences.color_found);
+            localStorage.setItem('color_closed', preferences.color_closed);
+            localStorage.setItem('api_choice', preferences.preferred_api);
+            amountOfCards = getSize();
+            chars = generateChars();
+            generateGrid(chars, gridContainer, sizeDropdown.value);
+        });
+    } else {
+        document.getElementById("auth-div-button").style.display = 'block';
+        document.getElementById("logout-div-button").style.display = 'none';
+        document.getElementById("settings-div-button").style.display = 'none';
+        amountOfCards = getSize();
+        chars = generateChars();
+        generateGrid(chars, gridContainer, sizeDropdown.value);
+    }
 })
 
 function updateSize() {
@@ -69,4 +82,22 @@ function stopTimer() {
 
 function getSize() {
     return sizeDropdown.value * sizeDropdown.value;
+}
+
+function navigateToSettings() {
+    if (isAuthenticated()) {
+        window.location.href = '../settings.html';
+    }
+}
+
+function navigateToLogin() {
+    window.location.href = '../login.html';
+}
+
+function isAuthenticated() {
+    return !!localStorage.getItem('user_id');
+}
+
+function isTokenExpired() {
+    return Date.now() >= localStorage.getItem("exp") * 1000;
 }

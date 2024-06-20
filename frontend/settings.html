@@ -8,33 +8,29 @@
 <body>
     <div id="settings-div">
         <h1>Settings</h1>
-        <select name="card-character" id="character-dropdown">
-            <option value="*">*</option>
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value=":3">:3</option>
-            <option value="^-^">^-^</option>
-        </select>
-        <select name="card-amount" id="amount-dropdown">
-            <option value="2">2x2</option>
-            <option value="4">4x4</option>
-            <option value="6">6x6</option>
-        </select>
+        <input type="email" placeholder="E-mail veranderen" id="email-field">
+        <button onclick="submitEmail()">E-mail opslaan</button>
+        <br>
         <div class="color-button-container">
             <label>
                 Verborgen Kaart
                 <input type="color" value="#99c6ff" name="closed-card-color" id="closed-card-color">
             </label>
             <label>
-                Geopende Kaart
-                <input type="color" value="#95ff95" name="opened-card-color" id="opened-card-color">
-            </label>
-            <label>
                 Gevonden Kaart
                 <input type="color" value="#ffaeff" name="found-card-color" id="found-card-color">
             </label>
         </div>
+        <label>API Keuze</label>
+        <select name="api" id="api-dropdown">
+            <option value="cats">Cats</option>
+            <option value="dogs">Dogs</option>
+        </select>
+        <br>
+        <button id="save-button" onclick="sendPreferences()">Instellingen opslaan</button>
+        <br>
         <a href="index.html" id="back-button">Terug naar het spelbord</a>
     </div>
 </body>
+<script src="js/settings.js"></script>
 </html>

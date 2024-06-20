@@ -7,8 +7,9 @@
     <title>Memory</title>
 </head>
 <body>
-<a class="nav-button" id="auth-div-button" href="login.html">Login</a>
-<a class="nav-button" id="settings-div-button" href="settings.html">Instellingen</a>
+<button class="nav-button" id="auth-div-button" onclick="navigateToLogin()">Login</button>
+<button class="nav-button" id="settings-div-button" onclick="navigateToSettings()">Instellingen</button>
+<button class="nav-button" id="logout-div-button" onclick="logout()">Uitloggen</button>
 <div id="header">
     <h1>
         Memory Mania
@@ -50,22 +51,6 @@
             <option value="6">6x6</option>
         </select>
     </div>
-    <div id="color-selection">
-        <div class="color-button-container">
-            <label>
-                Verborgen Kaart
-                <input type="color" value="#99c6ff" name="closed-card-color" id="closed-card-color">
-            </label>
-            <label>
-                Geopende Kaart
-                <input type="color" value="#95ff95" name="opened-card-color" id="opened-card-color">
-            </label>
-            <label>
-                Gevonden Kaart
-                <input type="color" value="#ffaeff" name="found-card-color" id="found-card-color">
-            </label>
-        </div>
-    </div>
     <button id="start-button" onclick="restart()">Restart</button>
 </div>
 <div id="win-message">
@@ -78,26 +63,8 @@
 <script src="js/progressbar.js"></script>
 <script src="js/game.js"></script>
 <script src="js/index.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', async function() {
-        const response = await fetch('http://localhost:8000/scores');
-        const scores = await response.json();
-
-        const leaderboardList = document.getElementById('leaderboard-list');
-        leaderboardList.innerHTML = '';
-        console.log(response);
-        console.log(scores);
-
-        scores.sort((a, b) => b.score - a.score);
-
-        const topScores = scores.slice(0, 5); // Get top 5 scores
-
-        topScores.forEach(score => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${score.username}: ${score.score}`;
-            leaderboardList.appendChild(listItem);
-        });
-    });
-</script>
+<script src="js/leaderboard.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/preferences.js"></script>
 </body>
 </html>
