@@ -29,12 +29,28 @@ function checkIfAllFound() {
 
 function displayWin() {
     stopTimer();
-    winMessage.getElementsByClassName("win-text")[0].innerText = "Tijd: " +  timerCount + "s";
-    winMessage.style.display = "block";
+    sendScores().then(r => {
+        winMessage.getElementsByClassName("win-text")[0].innerText = "Tijd: " +  timerCount + "s";
+        winMessage.style.display = "block";
+    });
 }
 
 function restart() {
     stopTimer();
     winMessage.style.display = "none";
     location.reload();
+}
+
+async function sendScores() {
+    if (localStorage.getItem('token') !== "") {
+        const user_id = localStorage.getItem('user_id');
+        const score = timerCount;
+        const response = await fetch('http://localhost:8000/game/save', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({"id": user_id, "score": score})
+        });
+    }
 }

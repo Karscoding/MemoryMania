@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="global.css">
+    <title>Login</title>
+</head>
+<body>
+<a class="nav-button" id="auth-div-button" href="register.html">Register</a>
+<div id="auth-div">
+    <h1>Login</h1>
+    <form id="login-form">
+        <label>
+            Username
+            <input type="text" name="username" placeholder="Username" required>
+        </label>
+        <br>
+        <label>
+            Password
+            <input type="password" name="password" placeholder="Password" required>
+        </label>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <div id="message"></div>
+</div>
+<script src="./js/login.js"></script>
+</body>
+</html>

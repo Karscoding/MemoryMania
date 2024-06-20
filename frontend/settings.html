@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="global.css">
+    <title>Title</title>
+</head>
+<body>
+    <div id="settings-div">
+        <h1>Settings</h1>
+        <input type="email" placeholder="E-mail veranderen" id="email-field">
+        <button onclick="submitEmail()">E-mail opslaan</button>
+        <br>
+        <div class="color-button-container">
+            <label>
+                Verborgen Kaart
+                <input type="color" value="#99c6ff" name="closed-card-color" id="closed-card-color">
+            </label>
+            <label>
+                Gevonden Kaart
+                <input type="color" value="#ffaeff" name="found-card-color" id="found-card-color">
+            </label>
+        </div>
+        <label>API Keuze</label>
+        <select name="api" id="api-dropdown">
+            <option value="cats">Cats</option>
+            <option value="dogs">Dogs</option>
+        </select>
+        <br>
+        <button id="save-button" onclick="sendPreferences()">Instellingen opslaan</button>
+        <br>
+        <a href="index.html" id="back-button">Terug naar het spelbord</a>
+    </div>
+</body>
+<script src="js/settings.js"></script>
+</html>

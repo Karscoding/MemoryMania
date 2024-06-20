@@ -7,11 +7,15 @@
     <title>Memory</title>
 </head>
 <body>
+<button class="nav-button" id="auth-div-button" onclick="navigateToLogin()">Login</button>
+<button class="nav-button" id="settings-div-button" onclick="navigateToSettings()">Instellingen</button>
+<button class="nav-button" id="logout-div-button" onclick="logout()">Uitloggen</button>
 <div id="header">
     <h1>
         Memory Mania
     </h1>
     <div id="game-state">
+        <p id="connection-test">No Connection</p>
         <p id="running-time">Verlopen tijd: 0s</p>
         <p id="found-cards">Gevonden kaart paren: 0</p>
     </div>
@@ -28,12 +32,7 @@
 <div id="stats">
     <div id="leaderboard">
         <h2>Top Vijf</h2>
-        <ol>
-            <li>Barack Obama</li>
-            <li>Joe Biden</li>
-            <li>Super Mario</li>
-            <li>Bowser</li>
-            <li>Princess Peach</li>
+        <ol id="leaderboard-list">
         </ol>
     </div>
     <br>
@@ -52,22 +51,6 @@
             <option value="6">6x6</option>
         </select>
     </div>
-    <div id="color-selection">
-        <div class="color-button-container">
-            <label>
-                Verborgen Kaart
-                <input type="color" value="#99c6ff" name="closed-card-color" id="closed-card-color">
-            </label>
-            <label>
-                Geopende Kaart
-                <input type="color" value="#95ff95" name="opened-card-color" id="opened-card-color">
-            </label>
-            <label>
-                Gevonden Kaart
-                <input type="color" value="#ffaeff" name="found-card-color" id="found-card-color">
-            </label>
-        </div>
-    </div>
     <button id="start-button" onclick="restart()">Restart</button>
 </div>
 <div id="win-message">
@@ -80,5 +63,8 @@
 <script src="js/progressbar.js"></script>
 <script src="js/game.js"></script>
 <script src="js/index.js"></script>
+<script src="js/leaderboard.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/preferences.js"></script>
 </body>
 </html>
