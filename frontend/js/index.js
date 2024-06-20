@@ -91,7 +91,7 @@ function navigateToSettings() {
 }
 
 function navigateToLogin() {
-    window.location.href = 'http://localhost:4200/login';
+    window.location.href = 'login.html';
 }
 
 function isAuthenticated() {

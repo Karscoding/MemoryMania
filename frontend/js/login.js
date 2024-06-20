@@ -21,6 +21,8 @@ document.getElementById('login-form').addEventListener('submit', async function 
 
         const tokenPayload = JSON.parse(atob(arrayToken[1]))
 
+        console.log(tokenPayload['roles']);
+
         // Save token to local storage or a cookie
         localStorage.setItem('token', token);
         localStorage.setItem('user_id', tokenPayload['sub']);

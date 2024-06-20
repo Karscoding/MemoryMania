@@ -70,6 +70,10 @@ div {
     border-radius: 15px;
 }
 
+#admin-div-button {
+    left: 1300px;
+}
+
 #settings-div {
     height: 70vh;
     width: 90vw;
