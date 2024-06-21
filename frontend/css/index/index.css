@@ -1,17 +1,22 @@
 #fetch-text {
     font-weight: bold;
+    font-size:20px;
     margin-bottom: 30px;
 }
 
 #image-container {
     display:none;
     position: absolute;
-    left:23vw;
-    top:25vh;
+    left:0;
+    top:10vh;
     border: 5px solid white;
     border-radius: 15px;
-    padding:15px;
+    padding:0;
     text-align: center;
+}
+
+#image-container img {
+    width: 300px;
 }
 
 #win-message {
@@ -36,10 +41,30 @@
 @media screen and (min-width: 1000px) {
     body {
         margin: 0;
-        /*overflow-y: hidden;*/
     }
 
     #win-message {
         left: 37vw;
+    }
+
+    #fetch-text {
+        font-weight: bold;
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    #image-container {
+        display:none;
+        position: absolute;
+        left:23vw;
+        top:25vh;
+        border: 5px solid white;
+        border-radius: 15px;
+        padding:15px;
+        text-align: center;
+    }
+
+    #image-container img {
+        width: auto;
     }
 }

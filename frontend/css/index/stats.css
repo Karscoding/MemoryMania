@@ -6,11 +6,15 @@ select {
 }
 
 #start-button {
-    font-size: 64px;
-    width: 25vw;
+    font-size: 30px;
+    width: 40vw;
     background-color: white;
     border-radius: 25px;
     height: 100px;
+}
+
+#stats {
+    font-size: 24px;
 }
 
 /* When screen enters desktop or landscape mode */
@@ -21,5 +25,9 @@ select {
         width: 29vw;
         font-size: clamp(12px, 2vw, 24px);
         float: right;
+    }
+
+    #start-button {
+        width: 20vw;
     }
 }
