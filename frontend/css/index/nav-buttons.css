@@ -25,6 +25,11 @@
 
 #logout-div-button {
     top:0;
+    left: 20vw;
+}
+
+#admin-div-button {
+    top:0;
     left: 30vw;
 }
 
@@ -61,5 +66,9 @@
         top:0;
         width: 25vw;
         left: 70vw;
+    }
+
+    #admin-div-button {
+        left:25vw;
     }
 }
