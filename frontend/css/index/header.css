@@ -1,0 +1,40 @@
+#header {
+    font-size: 5vw;
+    margin: 25px 0 25px 0;
+    text-align: center;
+    width: 100vw;
+}
+
+#game-state {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+#fetch-text {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#image-container {
+    display:none;
+    position: absolute;
+    left:23vw;
+    top:25vh;
+    border: 5px solid white;
+    border-radius: 15px;
+    padding:15px;
+    text-align: center;
+}
+
+/* When screen enters desktop or landscape mode */
+@media screen and (min-width: 1000px) {
+    #header {
+        font-size: 36px;
+        padding:0;
+    }
+
+    #game-state {
+        font-size: 24px;
+    }
+}

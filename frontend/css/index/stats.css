@@ -1,0 +1,25 @@
+select {
+    font-size: 20px;
+    width: 75px;
+    height: 30px;
+    margin: 15px;
+}
+
+#start-button {
+    font-size: 64px;
+    width: 25vw;
+    background-color: white;
+    border-radius: 25px;
+    height: 100px;
+}
+
+/* When screen enters desktop or landscape mode */
+@media screen and (min-width: 1000px) {
+    #stats {
+        height: 67vh;
+        padding: 2vw 2vw 2vw 8vw;
+        width: 29vw;
+        font-size: clamp(12px, 2vw, 24px);
+        float: right;
+    }
+}

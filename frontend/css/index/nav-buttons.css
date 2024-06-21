@@ -1,0 +1,39 @@
+#admin-div-button {
+    left: 1300px;
+    display:none;
+}
+
+.nav-button {
+    color: #4b4b4b;
+    background-color: white;
+    text-decoration: none;
+    padding:5px;
+    font-size:13px;
+    position: absolute;
+    border-radius: 15px;
+}
+
+#login-button {
+    top:0;
+    left:10px;
+}
+
+#settings-div-button {
+    left:150px;
+}
+
+#logout-div-button {
+    left: 400px;
+}
+
+#fetch-image-button {
+    position: absolute;
+    left: 1800px;
+}
+
+/* When screen enters desktop or landscape mode */
+@media screen and (min-width: 1000px) {
+    .nav-button {
+        font-size:35px;
+    }
+}

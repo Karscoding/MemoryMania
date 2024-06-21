@@ -127,5 +127,9 @@ function fetchImage() {
         .catch((error) => console.error(error));
 }
 
+function removeImage() {
+    document.getElementById("image-container").style.display = 'none';
+}
+
 const button = document.getElementById("fetch-image-button");
 button.addEventListener("click", fetchImage);

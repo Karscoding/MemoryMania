@@ -1,0 +1,33 @@
+.progress-loader {
+    width: 20vw;
+    background: rgba(236, 236, 238, 0.253);
+    height: 10px;
+    border-radius: 7px;
+    text-align: center;
+    margin: 15px;
+    visibility: hidden;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.progress {
+    width: 1px;
+    height: 10px;
+    border-radius: 7px;
+    background: rgb(255, 255, 255);
+    transition: 5s;
+}
+
+@keyframes loading_44 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

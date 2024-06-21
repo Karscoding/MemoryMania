@@ -1,0 +1,45 @@
+#fetch-text {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#image-container {
+    display:none;
+    position: absolute;
+    left:23vw;
+    top:25vh;
+    border: 5px solid white;
+    border-radius: 15px;
+    padding:15px;
+    text-align: center;
+}
+
+#win-message {
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    top: 32vh;
+    left: 24.15vw;
+    padding: 80px;
+    border-radius: 50px;
+    display: none;
+}
+
+#win-message #replay-button {
+    width: 150px;
+    height: 35px;
+    margin-top: 50px;
+    background-color: white;
+}
+
+/* When screen enters desktop or landscape mode */
+@media screen and (min-width: 1000px) {
+    body {
+        margin: 0;
+        /*overflow-y: hidden;*/
+    }
+
+    #win-message {
+        left: 37vw;
+    }
+}
