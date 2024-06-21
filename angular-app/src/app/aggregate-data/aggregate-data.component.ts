@@ -3,6 +3,7 @@ import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-aggregate-data',
@@ -16,7 +17,11 @@ export class AggregateDataComponent implements OnInit {
   players: any[] = [];
   dates: any[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private router: Router) {
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
+    }
+  }
 
   ngOnInit(): void {
     this.loadAggregateData();

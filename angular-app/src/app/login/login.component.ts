@@ -23,10 +23,7 @@ export class LoginComponent {
 
   loginFailed = false;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
-    if (!localStorage.getItem('token')) {
-      this.router.navigate(['/login']);
-    }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
   }
 
   login() {
@@ -36,9 +33,6 @@ export class LoginComponent {
   submitLogin(form: any): void {
     if (form.valid) {
       this.authService.login(this.account.username, this.account.password);
-    }
-    if (this.router.url.includes('login')) {
-      this.loginFailed = true;
     }
   }
 
