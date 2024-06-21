@@ -1,13 +1,16 @@
 import {Component} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {Form, FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule} from "@angular/forms";
+import { Router } from "@angular/router";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -18,7 +21,12 @@ export class LoginComponent {
     password: ''
   }
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+  loginFailed = false;
+
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
+    }
   }
 
   login() {
@@ -29,5 +37,10 @@ export class LoginComponent {
     if (form.valid) {
       this.authService.login(this.account.username, this.account.password);
     }
+    if (this.router.url.includes('login')) {
+      this.loginFailed = true;
+    }
   }
+
+  protected readonly localStorage = localStorage;
 }
